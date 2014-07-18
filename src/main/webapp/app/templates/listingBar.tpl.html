@@ -1,0 +1,14 @@
+<div class="small-4 columns">
+    <h2>Sidebar</h2>
+    <input type="text" placeholder="Filter text" ng-model="search" />
+    <ul>
+        <li my-app-email-listing-directive email="mail" action="setSelectedMail(selectedMail)" ng-repeat="mail in (emailList | orderBy:'from' | filter:search)">
+        </li>
+        <!--<li ng-repeat="mail in (emailList | orderBy:'from' | filter:search)" ng-click="setSelectedMail(mail)">
+            <div class="container emailListing" ng-class="{selected: isSelected(mail)}">
+                <div class="small-8 columns">{{mail.from}}</div>
+                <div class="small-12 columns">{{mail.subject}}</div>
+            </div>
+        </li>-->
+    </ul>
+</div>

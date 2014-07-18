@@ -1,0 +1,6 @@
+[{ "_id" : { "$oid" : "532dc17b7fe01be38a9ebe60" }, "from" : "javilete14@gmail.com", "to" : "carmenlogpez@gmail.com", "subject" : "this is a test", "content" : "this is the content of the eail" },
+{ "_id" : { "$oid" : "532dc1ae7fe01be38a9ebe61" }, "from" : "carmenorgeta@gmail.com", "to" : "pepito@gmail.com", "subject" : "test subject", "content" : "More content of the eail" },
+{ "_id" : { "$oid" : "532dc1e27fe01be38a9ebe62" }, "from" : "javilete14@gmail.com", "to" : "pepito@gmail.com", "subject" : "subject txt", "content" : "Content of the email" },
+{ "_id" : { "$oid" : "53328c5c5437a475daaaf3ce" }, "from" : "javilete14@gmail.com" },
+{ "_id" : { "$oid" : "53328caa1f7a1218b6d0716b" }, "content" : "nos vamos a casas despues de tres meses", "from" : "jdddddavilete14@gmail.com", "subject" : "nos vamos", "to" : [ "juanito@hotmail.com", "john@gmail.com" ] },
+{ "_id" : { "$oid" : "53328cc71f7a1218b6d0716c" }, "from" : "isalarred@gmail.com", "to" : "javilete14@gmail.com", "subject" : "txt", "content" : "Content of the email from mum" }]

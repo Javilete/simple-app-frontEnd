@@ -1,0 +1,40 @@
+<h1>Settings</h1>
+
+<div class="row">
+    <h1>Update your settings</h1>
+    <form name="form" ng-submit="updateSettings()">
+        <fieldset>
+            <legend>Update settings</legend>
+            <div class="row">
+                <div class="small-8 columns">
+                    <label>Nameeeeeee:</label>
+                    <input type="text" placeholder="Name" name="name" ng-model="settings.name" ng-minlength="3" ng-maxlength="20" ng-pattern="/[a-zA-Z]+$/" ng-required="true" />
+                    <div ng-show="form.name.$error.required">The name is required</div>
+                    <div ng-show="form.name.$error.minlength">The name must be greater than 3 characters</div>
+                    <div ng-show="form.name.$error.maxlength">The name must be less than 20 characters</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-8 columns">
+                    <label>Email:</label>
+                    <input type="email" placeholder="Email" name="email" ng-model="settings.email" ng-required="true" />
+                    <span ng-show="form.email.$error.required">The email is required</span>
+                    <span ng-show="form.email.$error.email">That is not a valid email</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-8 columns">
+                    <label>Age:</label>
+                    <input type="number" placeholder="Age" name="age" ng-model="settings.age" min="3" max="199" ng-required="true"/>
+                    <span ng-show="form.age.$error.min">You must be at least 3 to use this site</span>
+                    <span ng-show="form.age.$error.max">You are 200 or older?? Really??</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="push-9 small-3">
+                    <button type="submit" class="button" ng-disabled="form.$dirty && form.$invalid">Update</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

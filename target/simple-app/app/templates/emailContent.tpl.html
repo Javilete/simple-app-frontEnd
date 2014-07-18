@@ -1,0 +1,33 @@
+<div class="small-8 columns">
+    <h2>Content</h2>
+    <div ng-show="!selectedMail">
+        <h1>No conversation selected</h1>
+    </div>
+    <div ng-show="selectedMail">
+        <form id="replyForm" ng-submit="sendEmailReply()" ng-show="showingReply">
+            <div class="row">
+                <div class="small-1 columns">
+                    <span class="prefix">To</span>
+                </div>
+                <div class="small-11 columns">
+                    <input ng-model="reply.to" type="email" placeholder=""/>
+                </div>
+                <div class="small-12 columns">
+                    <textarea ng-model="reply.content">{{ reply.content }}</textarea>
+                </div>
+            </div>
+            <button class="button radius" ng-click="sendReply()">Send</button>
+            <button class="button radius" ng-click="toggleReplyForm()">Cancel</button>
+        </form>
+        <div class="row header">
+            <div class="small-6 columns">{{ selectedMail.subject}}</div>
+        </div>
+        <div class="row actions">
+            <div class="small-8 columns">{{ selectedMail.from }} to {{ selectedMail.to }}</div>
+        </div>
+        <a ng-click="toggleReplyForm()" class="button radius push-1">Reply</a>
+        <div class="small-12 columns">
+            {{ selectedMail.content}}
+        </div>
+    </div>
+</div>
