@@ -1,7 +1,7 @@
 define(
     function(){
 
-        var myAppContentController = function($scope, $rootScope, mailService){
+        var myAppContentController = function($scope, $rootScope, mailFactory){
             $scope.showingReply = false;
             $scope.reply = {};
 
@@ -18,7 +18,7 @@ define(
             $scope.sendReply = function(){
                 $scope.showingReply = false;
                 $rootScope.loading = true;
-                mailService.sendMail($scope.reply)
+                mailFactory.sendMail($scope.reply)
                     .then(function(status){
                         $rootScope.loading = false;
                     }, function(err){
@@ -32,7 +32,7 @@ define(
             })
         }
 
-        myAppContentController.$inject = ['$scope', '$rootScope', 'myAppMailService'];
+        myAppContentController.$inject = ['$scope', '$rootScope', 'myAppMailFactory'];
 
         return myAppContentController;
     }

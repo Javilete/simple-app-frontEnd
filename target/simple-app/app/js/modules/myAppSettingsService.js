@@ -2,7 +2,7 @@ define(
     function(){
 
         var myAppSettingsService = function($http, $q){
-            var getSettings =  function(){
+            this.getSettings =  function(){
                 return $http({
                     method: 'GET',
                     url: 'http://localhost:8089/settings?name=Javier Rubio'
@@ -10,7 +10,7 @@ define(
             };
 
 
-            var updateSettings = function(settings){
+            this.updateSettings = function(settings){
                 var d = $q.defer();
                 $http({
                     method: 'PUT',
@@ -22,11 +22,6 @@ define(
                     d.reject(data);
                 })
             }
-
-            return {
-                getSettings: getSettings,
-                updateSettings: updateSettings
-            };
 
         }
 

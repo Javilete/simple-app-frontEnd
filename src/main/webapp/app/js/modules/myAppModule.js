@@ -14,30 +14,39 @@
 define([
         'angular',
         './myAppRoutes',
-        './myAppMailService',
+        './myAppMailFactory',
         './myAppSettingsService',
         './myAppHomeController',
         './myAppSettingsController',
         './myAppMailListingController',
         './myAppContentController',
-        './myAppEmailListingDirective'
+        './myAppEmailListingDirective',
+        './myValue'
     ],
     function(
         angular,
         myAppRoutes,
-        myAppMailService,
+        myAppMailFactory,
         myAppSettingsService,
         myAppHomeController,
         myAppSettingsController,
         myAppMailListingController,
         myAppContentController,
-        myAppEmailListingDirective
+        myAppEmailListingDirective,
+        myValue
     ){
 
         var app = angular.module('myApp', ['ui.router']);
 
-        app.service('myAppMailService', myAppMailService);
-        app.service('myAppSettingsService', myAppSettingsService);
+        app.factory('myAppMailFactory', myAppMailFactory);
+
+        //app.service('myAppSettingsService', myAppSettingsService);
+
+//        app.factory('myAppSettingsService', ['$http', '$q', function($http, $q){
+//            return new myAppSettingsService($http, $q);
+//        }])
+
+        app.value('myValue', myValue);
 
         app.controller('myAppHomeController', myAppHomeController);
         app.controller('myAppSettingsController', myAppSettingsController);
@@ -45,6 +54,17 @@ define([
         app.controller('myAppContentController', myAppContentController);
 
         app.directive('myAppEmailListingDirective', myAppEmailListingDirective);
+
+        app.provider('myAppSettingsService', function MyAppSettingsServiceProvider(){
+
+            this.$get = ['$http', '$q', function($http, $q){
+                return new myAppSettingsService($http, $q);
+            }];
+        })
+
+        app.config(['myAppSettingsServiceProvider', function(myAppSettingsServiceProvider){
+            myAppSettingsServiceProvider;
+        }])
 
         app.config(myAppRoutes);
 

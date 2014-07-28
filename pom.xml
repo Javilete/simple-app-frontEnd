@@ -44,7 +44,7 @@
               <configuration>
                   <url>http://localhost:8084/manager/text</url>
                   <server>TomcatServer</server>
-                  <path>/simple-app</path>
+                  <path>/app</path>
               </configuration>
           </plugin>
           <!-- Maven compiler plugin -->
