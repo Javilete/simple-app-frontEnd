@@ -1,13 +1,13 @@
 {
   "name": "simple-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "simple app for a mail service",
   "main": "karma.conf.js",
   "scripts": {
     "test": "grunt test"
   },
   "author": "Javier Rubio",
-  "license": "BSD-2-Clause",
+  "license": "Other",
   "devDependencies": {
     "grunt": "~0.4.4",
     "karma": "~0.12.14",

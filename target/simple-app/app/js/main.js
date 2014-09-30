@@ -1,21 +1,19 @@
 require.config({
     baseUrl : 'app/js',
     paths: {
-        'jquery': 'vendor/jquery',
-        'angular' : 'vendor/angular',
-        'angularUiRouter' : 'vendor/angular-ui-router',
+        'jquery': 'lib/jquery/dist/jquery.min',
+        'angular' : 'lib/angular/angular.min',
+        'angularUiRouter' : 'lib/angular-ui-router/release/angular-ui-router.min',
 
         'myApp': 'modules/myAppModule'
     },
 
     shim: {
        'angular': {
+            deps: ['jquery'],
             exports: 'angular'
        },
-       'angularUiRouter': {
-           deps: ['angular'],
-           exports: 'angular'
-       }
+       'angularUiRouter': ['angular']
     },
 
     priority: ['angular']

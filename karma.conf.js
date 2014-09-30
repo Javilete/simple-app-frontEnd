@@ -24,6 +24,7 @@ module.exports = function(config) {
       "src/main/webapp/app/js/vendor/angular-mocks-1.1.4.js",
       "src/main/webapp/app/js/vendor/angular-route.js",
       "src/main/webapp/app/js/vendor/angular-ui-router.min.js",
+      "src/main/webapp/app/js/require.js",
       "src/main/webapp/app/js/main.js",
       "src/test/app/js/*Spec.js"
     ],

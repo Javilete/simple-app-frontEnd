@@ -1,0 +1,22 @@
+{
+  "name": "simple-app",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Javilete/simple-app-frontEnd",
+  "authors": [
+    "Javier Rubio Larred"
+  ],
+  "description": "Front-ends of a mail service",
+  "main": "app/js/main.js",
+  "keywords": [
+    "simple-app"
+  ],
+  "license": "Other",
+  "dependencies": {
+    "angular": "~1.2.25",
+    "angular-resource": "~1.2.25",
+    "angular-mocks": "~1.2.25",
+    "angular-route": "~1.2.25",
+    "angular-ui-router": "~0.2.11",
+    "jquery": "~2.1.1"
+  }
+}

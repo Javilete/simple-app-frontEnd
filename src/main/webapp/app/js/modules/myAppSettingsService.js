@@ -5,7 +5,7 @@ define(
             this.getSettings =  function(){
                 return $http({
                     method: 'GET',
-                    url: 'http://localhost:8089/settings?name=Javier Rubio'
+                    url: 'http://localhost:8089/myApp/settings/javilete14@gmail.com'
                 });
             };
 

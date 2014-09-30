@@ -40,7 +40,7 @@ define([
 
         app.factory('myAppMailFactory', myAppMailFactory);
 
-        //app.service('myAppSettingsService', myAppSettingsService);
+        app.service('myAppSettingsService', myAppSettingsService);
 
 //        app.factory('myAppSettingsService', ['$http', '$q', function($http, $q){
 //            return new myAppSettingsService($http, $q);
@@ -55,16 +55,23 @@ define([
 
         app.directive('myAppEmailListingDirective', myAppEmailListingDirective);
 
-        app.provider('myAppSettingsService', function MyAppSettingsServiceProvider(){
 
-            this.$get = ['$http', '$q', function($http, $q){
-                return new myAppSettingsService($http, $q);
-            }];
-        })
+        app.constant('appPrefix', "myAppService");
+//        app.provider('myAppSettingsService', function MyAppSettingsServiceProvider(){
+//            var uri;
+//
+//            this.setUri = function(uriValue){
+//                uri = setUri;
+//            }
+//
+//            this.$get = ['$http', '$q', function($http, $q){
+//                return new myAppSettingsService(uri, $http, $q);
+//            }];
+//        })
 
-        app.config(['myAppSettingsServiceProvider', function(myAppSettingsServiceProvider){
-            myAppSettingsServiceProvider;
-        }])
+//        app.config(['myAppSettingsServiceProvider', 'appPrefix', function(myAppSettingsServiceProvider, appPrefix){
+//            myAppSettingsServiceProvider.setUri(appPrefix);
+//        }])
 
         app.config(myAppRoutes);
 
